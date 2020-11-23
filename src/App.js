@@ -1,10 +1,17 @@
 import React from "react";
+import Navbar from "./components/navbar";
+import { BrowserRouter as BR, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello from capstone proj</h1>
+      <BR>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact />
+        </Switch>
+      </BR>
     </div>
   );
 }
