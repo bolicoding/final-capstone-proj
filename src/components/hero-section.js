@@ -11,7 +11,7 @@ function HeroSection() {
       <p>Be a part of the Fast Garage Family</p>
       <div className="hero-btns">
         <Button
-          className="btns"
+          className="btn"
           buttonStyle="btn--outline"
           buttonSize="btn--large"
         >
