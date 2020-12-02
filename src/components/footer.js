@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./button";
+import axios from "axios";
 import "../styles/footer.css";
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [email, setEmail] = useState("");
+  const handleSignUpSubmission = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/sign-up", email)
+      .then((res) => {
+        setEmail("");
+        console.log("success", res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="footer-container">
       <section className="footer-subscription">
         <p className="footer-subscription-heading">
           Join the FG newsletter to receive news and deals!!
         </p>
-        <p className="footer-subscription-text">
-          You can unsubscribe at any time.
-        </p>
         <div className="input-areas">
-          <form>
+          <form onSubmit={handleSignUpSubmission}>
             <input
               type="email"
-              name="email"
               placeholder="Your Email"
               className="footer-input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
-            <Button buttonStyle="btn--outline">Subscribe</Button>
+            <Button buttonStyle="btn--outline" type="submit">
+              Subscribe
+            </Button>
           </form>
         </div>
       </section>
@@ -35,7 +51,7 @@ function Footer() {
           <small className="website-rights">Fast Garage © 2020</small>
           <div className="social-icons">
             <Link
-              classname="social-icon-link facebook"
+              className="social-icon-link facebook"
               to="https://www.facebook.com/Fast-Garage-Llc-168252353371323"
               target="_blank"
               aria-label="Facebook"
@@ -43,7 +59,7 @@ function Footer() {
               <i className="fab fa-facebook-f" />
             </Link>
             <Link
-              classname="social-icon-link instagram"
+              className="social-icon-link instagram"
               to="https://www.instagram.com/fg_sport_/"
               target="_blank"
               aria-label="Instagram"

@@ -6,6 +6,7 @@ import Home from "./components/pages/home";
 import Services from "./components/pages/services";
 import Contact from "./components/pages/contact";
 import SignUp from "./components/pages/sign-up";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/sign-up" component={SignUp} />
         </Switch>
+        <Footer />
       </BR>
     </div>
   );
