@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "./button";
 import axios from "axios";
 import "../styles/footer.css";
 import { Link } from "react-router-dom";
@@ -8,8 +7,9 @@ function Footer() {
   const [email, setEmail] = useState("");
   const handleSignUpSubmission = (e) => {
     e.preventDefault();
+    console.log("hello");
     axios
-      .post("http://localhost:5000/sign-up", email)
+      .post("http://localhost:5000/sign-up", { email })
       .then((res) => {
         setEmail("");
         console.log("success", res);
@@ -35,9 +35,9 @@ function Footer() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <Button buttonStyle="btn--outline" type="submit">
+            <button className="btn--outline" type="submit">
               Subscribe
-            </Button>
+            </button>
           </form>
         </div>
       </section>

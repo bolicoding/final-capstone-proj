@@ -16,6 +16,15 @@
   font-size: 3rem;
 }
 
+.home {
+  background-image: url("./images/tim-mossholder-V37iTrYZz2E-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
 .services {
   background-image: url("./images/IMG_2661.JPG");
   background-position: center;
