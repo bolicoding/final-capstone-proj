@@ -9,7 +9,7 @@ function Footer() {
     e.preventDefault();
     console.log("hello");
     axios
-      .post("fastgarageserver.netlify.app/sign-up", { email })
+      .post("https://fastgarage-server.herokuapp.com/sign-up", { email })
       .then((res) => {
         setEmail("");
         console.log("success", res);
