@@ -29,7 +29,7 @@ class ContactForm extends React.Component {
     e.preventDefault();
     console.log(this.state);
     axios
-      .post("http://localhost:5000/send", {
+      .post("fastgarageserver.netlify.app", {
         email: this.state.email,
         name: this.state.name,
         message: this.state.message,
@@ -63,7 +63,7 @@ class ContactForm extends React.Component {
           <form
             className="form"
             id="contact-form"
-            onSubmit={this.handleSubmit}
+            onSubmit={(e) => this.handleSubmit(e)}
             method="POST"
           >
             <div className="form-inputs">
@@ -107,7 +107,7 @@ class ContactForm extends React.Component {
               Submit
             </button>
             <div className="successfulMsg">
-              <p>{this.state.successfulMsg}</p>
+              <h1>{this.state.successfulMsg}</h1>
             </div>
           </form>
         </div>

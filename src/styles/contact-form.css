@@ -9,6 +9,12 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.successfulMsg > h1 {
+  color: #fff;
+  padding: 20px;
+  font-size: 2em;
+}
+
 .close-btn {
   position: absolute;
   top: 2%;
