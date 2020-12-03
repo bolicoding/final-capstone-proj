@@ -29,7 +29,7 @@ class ContactForm extends React.Component {
     e.preventDefault();
     console.log(this.state);
     axios
-      .post("fastgarageserver.netlify.app", {
+      .post("fastgarageserver.netlify.app/send", {
         email: this.state.email,
         name: this.state.name,
         message: this.state.message,

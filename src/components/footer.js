@@ -9,7 +9,7 @@ function Footer() {
     e.preventDefault();
     console.log("hello");
     axios
-      .post("http://localhost:5000/sign-up", { email })
+      .post("fastgarageserver.netlify.app/sign-up", { email })
       .then((res) => {
         setEmail("");
         console.log("success", res);
